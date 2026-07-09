@@ -378,7 +378,7 @@ function LogoImage({ className = "" }) {
   return (
     <Image
       src="/images/Logo_white.png"
-      alt="Knowles"
+      alt="Eternal"
       width={120}
       height={80}
       className={className}
@@ -522,7 +522,7 @@ export default function Header() {
           </div>
 
           <div className="bottom">
-            <div>© Knowles 2026. All Rights Reserved</div>
+            <div>© Eternal 2026. All Rights Reserved</div>
             <Link href="/legal" onClick={() => setMenuOpen(false)}>
               Legal
             </Link>

@@ -22,16 +22,16 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "Knowles | Super Prime Construction",
+  title: "Eternal | Design & Build",
   description:
-    "Knowles is a super-prime construction contractor who build and deliver some of the finest homes across London and the Home Counties.",
+    "Eternal is a design and build company that creates exceptional spaces for clients across London and the Home Counties.",
   metadataBase: new URL("http://localhost:3000"),
   openGraph: {
-    title: "Knowles | Super Prime Construction",
+    title: "Eternal | Design & Build",
     description:
-      "Knowles is a super-prime construction contractor who build and deliver some of the finest homes across London and the Home Counties.",
+      "Eternal is a design and build company that creates exceptional spaces for clients across London and the Home Counties.",
     url: "http://localhost:3000/",
-    siteName: "Knowles",
+    siteName: "Eternal | Design & Build",
     type: "website",
   },
   twitter: {
