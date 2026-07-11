@@ -77,7 +77,7 @@ export default function Footer() {
       </div>
 
       <div className="row-3 pad-h">
-        <div>© Knowles 2026. All Rights Reserved</div>
+        <div>© Eternal Design and Build 2026. All Rights Reserved</div>
 
         <ul className="footer-menu">
           {footerMenu.map((item) => (
