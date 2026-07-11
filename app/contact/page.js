@@ -30,9 +30,9 @@
 //                 NW1 5DH
 //               </p>
 //               <p>
-//                 <a href="mailto:info@knowles.uk.com">info@knowles.uk.com</a>
+//                 <a href="mailto:info@eternaldesignandbuild.com">info@eternaldesignandbuild.com</a>
 //                 <br />
-//                 +44 (0)20 3988 7994
+//                 07728034763
 //               </p>
 //             </div>
 

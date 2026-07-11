@@ -4,12 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const footerLogos = [
-  "https://knowles.uk.com/wp-content/uploads/2024/05/Ecologi-Logo-BW-1.png",
-  "https://knowles.uk.com/wp-content/uploads/2024/05/CL_TOP100_2023_LOGO-BW-1.png",
-  "https://knowles.uk.com/wp-content/uploads/2025/01/GBB-Brand-Partner-Logo-2025-white.png",
-  "https://knowles.uk.com/wp-content/uploads/2024/05/ASUC-Logo-BW-1.png",
-  "https://knowles.uk.com/wp-content/uploads/2024/05/Chas-Accredited-Contractor-Logo-BW-1.png",
-  "https://knowles.uk.com/wp-content/uploads/2024/05/Considerate-Constructors-Logo-BW-1.png",
+  "/images/social_media/dark.svg",
+  "/images/social_media/govlogo.png",
+  "/images/social_media/installsure-white.png",
+  "/images/social_media/logo-footer.svg",
+  "/images/social_media/logo.jpg",
+  "/images/social_media/trustmark_logo_light.svg"
 ];
 
 const footerMenu = [
@@ -40,27 +40,27 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <p>
-              12th Floor Capital House,
+              3 Sussex House,
               <br />
-              25 Chapel Street, London
+              Stratton Close, Edgware, London,
               <br />
-              NW1 5DH
+              HA8 6PY
             </p>
             <p>
-              <a href="mailto:info@knowles.uk.com">info@knowles.uk.com</a>
+              <a href="mailto:info@eternaldesignandbuild.com">info@eternaldesignandbuild.com</a>
               <br />
-              <a href="tel:+442039887994">+44 (0)20 3988 7994</a>
+              <a href="tel:07728034763">07728034763</a>
             </p>
           </div>
 
           <div>
             <h4>Follow</h4>
             <p>
-              <a href="https://www.instagram.com/knowles_construction/">
+              <a href="https://instagram.com/knowles_construction" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
               <br />
-              <a href="https://www.linkedin.com/company/knowlesconstruction/">
+              <a href="linkedin.com/company/knowlesconstruction">
                 Linkedin
               </a>
             </p>

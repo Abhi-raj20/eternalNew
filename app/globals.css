@@ -384,8 +384,8 @@ img.full-bleed-image {
    ================================================================== */
 .site-header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 4.625rem;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* column-gap: 4.625rem; */
   align-items: center;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -426,7 +426,7 @@ img.full-bleed-image {
 
 .site-header .site-branding {
   display: block;
-  width: 15.8125rem;
+  width: 10rem;
   margin: 0 auto;
   grid-column: 2;
 }

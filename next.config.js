@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "http://localhost:3000",
         pathname: "/wp-content/uploads/**",
       },
+        {
+        protocol: "https",
+        hostname: "www.fmb.org.uk",
+        pathname: "/assets/img/logo/**",
+      }
     ],
   },
 };
