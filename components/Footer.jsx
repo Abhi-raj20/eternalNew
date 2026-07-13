@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const footerLogos = [
   "/images/social_media/dark.svg",
-  "/images/social_media/govlogo.png",
-  "/images/social_media/installsure-white.png",
+  "/images/social_media/trustmark_logo_light.svg",
   "/images/social_media/logo-footer.svg",
   "/images/social_media/logo.jpg",
-  "/images/social_media/trustmark_logo_light.svg"
+  "/images/social_media/installsure-white.png",
+  "/images/social_media/environment-agency.png"
 ];
 
 const footerMenu = [
@@ -56,11 +56,11 @@ export default function Footer() {
           <div>
             <h4>Follow</h4>
             <p>
-              <a href="https://instagram.com/knowles_construction" target="_blank" rel="noopener noreferrer">
+              <a href="instagram.com/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
               <br />
-              <a href="linkedin.com/company/knowlesconstruction">
+              <a href="linkedin.com/company/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
                 Linkedin
               </a>
             </p>
@@ -69,12 +69,19 @@ export default function Footer() {
       </div>
 
       <div className="row-2">
-        {footerLogos.map((src, i) => (
-          <div key={i}>
-            <Image src={src} alt="" width={200} height={130} />
-          </div>
-        ))}
-      </div>
+  {footerLogos.map((src, i) => (
+    <div key={i} className="footer-logo">
+      <Image
+        src={src}
+        alt=""
+        width={200}
+        height={130}
+        className="footer-logo-img"
+        sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, (max-width: 1200px) 16vw, 200px"
+      />
+    </div>
+  ))}
+</div>
 
       <div className="row-3 pad-h">
         <div>© Eternal Design and Build 2026. All Rights Reserved</div>

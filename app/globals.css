@@ -264,7 +264,7 @@ p {
 .logo-animation.animated {
   top: 1.25rem;
   transform: translateY(0);
-  width: 15.82rem;
+  width: 9rem;
 }
 
 .logo-animation.faded {
@@ -924,7 +924,7 @@ img.full-bleed-image {
   margin-right: 10.9375rem;
 }
 
-.site-footer .row-2 {
+/* .site-footer .row-2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -938,6 +938,33 @@ img.full-bleed-image {
   max-height: 5.8125rem;
   height: 100%;
   width: auto;
+  filter: grayscale(1) brightness(2);
+} */
+
+.site-footer .row-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-white);
+  border-bottom: 1px solid var(--border-white);
+  padding: 1.25rem 2.5rem;
+}
+
+.site-footer .row-2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.8125rem;
+  width: 9.375rem; /* fixed box width so every logo takes equal space */
+}
+
+.site-footer .row-2 img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   filter: grayscale(1) brightness(2);
 }
 
@@ -988,7 +1015,7 @@ img.full-bleed-image {
     margin-right: 0;
   }
 
-  .site-footer .row-2 {
+  /* .site-footer .row-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4.2857142857rem;
@@ -998,6 +1025,25 @@ img.full-bleed-image {
 
   .site-footer .row-2 img {
     max-height: 5.5714285714rem;
+    margin: 0 auto;
+  } */
+
+  .site-footer .row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4.2857142857rem;
+    row-gap: 2.8571428571rem;
+    padding: 2.1428571429rem 2.7142857143rem;
+  }
+
+  .site-footer .row-2 > div {
+    height: 5.5714285714rem;
+    width: 100%;
+  }
+
+  .site-footer .row-2 img {
+    max-height: 100%;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1019,6 +1065,39 @@ img.full-bleed-image {
     position: absolute;
     bottom: 1.0714285714rem;
     right: 1.0714285714rem;
+  }
+}
+
+/* Tablet - logos slightly smaller before hitting the 768px grid layout */
+@media (max-width: 1024px) {
+  .site-footer .row-2 {
+    padding: 1.25rem 1.5rem;
+    column-gap: 1.5rem;
+  }
+
+  .site-footer .row-2 img {
+    max-height: 4.5rem;
+  }
+}
+
+/* Small mobile - shrink further within existing 768px grid */
+@media (max-width: 480px) {
+  .site-footer .row-2 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 1.75rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .site-footer .row-2 img {
+    max-height: 3.5714285714rem;
+  }
+}
+
+/* Extra small mobile (small phones) */
+@media (max-width: 375px) {
+  .site-footer .row-2 img {
+    max-height: 2.8571428571rem;
   }
 }
 
@@ -1415,3 +1494,101 @@ img.full-bleed-image {
   gap: 1rem;
 }
 
+/* beforaftercsss */
+.ba-slider {
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+  aspect-ratio: 570 / 370.5;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.ba-image-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-before-wrap {
+  z-index: 2;
+}
+
+.ba-image {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ba-label-before {
+  left: 12px;
+}
+
+.ba-label-after {
+  right: 12px;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  z-index: 4;
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ba-handle::before {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.ba-arrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  z-index: 5;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.ba-arrow-left {
+  border-right: 8px solid #333;
+  margin-right: 8px;
+}
+
+.ba-arrow-right {
+  border-left: 8px solid #333;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .ba-slider {
+    max-width: 100%;
+  }
+}
