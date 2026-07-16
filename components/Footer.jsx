@@ -56,11 +56,11 @@ export default function Footer() {
           <div>
             <h4>Follow</h4>
             <p>
-              <a href="instagram.com/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
+              <a href="https://instagram.com/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
               <br />
-              <a href="linkedin.com/company/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/company/eternaldesignandbuild" target="_blank" rel="noopener noreferrer">
                 Linkedin
               </a>
             </p>

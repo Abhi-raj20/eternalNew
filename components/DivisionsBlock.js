@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { useRef } from "react";
 import ImageWithLoader from "@/components/ImageWithLoader";
+import { HiOutlineArrowLongLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
 import useAutoScroll from "@/hooks/useAutoScroll";
 import { divisions } from "@/data/content";
 
 export default function DivisionsBlock() {
-  const trackRef = useAutoScroll(0.4);
+  const trackRef = useRef(null);
     const loopedDivisions = [...divisions, ...divisions];
   
     const scrollManual = (dir) => {
@@ -46,14 +48,16 @@ export default function DivisionsBlock() {
           ))}
         </div>
 
-        <div className="carousel-buttons desktop-only">
-          <span className="prev-button" onClick={() => scrollManual(-1)}>
-            ←
-          </span>
-          <span className="next-button" onClick={() => scrollManual(1)}>
-            →
-          </span>
-        </div>
+<div className="carousel-buttons desktop-only">
+  <span className="prev-button" onClick={() => scrollManual(-1)}>
+    <HiOutlineArrowLongLeft size={34} />
+  </span>
+
+  <span className="next-button" onClick={() => scrollManual(1)}>
+    <HiOutlineArrowLongRight size={34} />
+  </span>
+</div>
+      
 </Reveal>
   );
 }

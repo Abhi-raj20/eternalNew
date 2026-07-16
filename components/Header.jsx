@@ -367,6 +367,172 @@
 // }
 
 
+// "use client";
+
+// import { useEffect, useRef, useState } from "react";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { navLinks } from "@/data/content";
+
+// function LogoImage({ className = "" }) {
+//   return (
+//     <img
+//       src="/images/Logo_white.png"
+//       alt="Eternal"
+//       // width={120}
+//       // height={80}
+//       className={className}
+//       priority
+//     />
+//   );
+// }
+
+// export default function Header() {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [hidden, setHidden] = useState(false);
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [activeSubmenu, setActiveSubmenu] = useState(null);
+//   const lastScroll = useRef(0);
+//   const closeTimer = useRef(null);
+
+//   useEffect(() => {
+//     function onScroll() {
+//       const y = window.scrollY;
+
+//       if (y === 0) {
+//         setHidden(false);
+//       } else if (y > lastScroll.current && y > 100) {
+//         setHidden(true);
+//       } else if (y < lastScroll.current && y > 100) {
+//         setHidden(false);
+//       }
+//       lastScroll.current = y;
+
+//       setScrolled(y > window.innerHeight);
+//     }
+
+//     window.addEventListener("scroll", onScroll);
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     document.body.style.overflow = menuOpen ? "hidden" : "";
+//   }, [menuOpen]);
+
+//   // Submenu ko turant band nahi karte - thoda delay dete hain taaki
+//   // mouse ka link se submenu tak ka gap cross karna aasan rahe.
+//   const openSubmenu = (label) => {
+//     clearTimeout(closeTimer.current);
+//     setActiveSubmenu(label);
+//   };
+
+//   const scheduleCloseSubmenu = () => {
+//     closeTimer.current = setTimeout(() => setActiveSubmenu(null), 250);
+//   };
+
+//   useEffect(() => {
+//     return () => clearTimeout(closeTimer.current);
+//   }, []);
+
+//   const headerClass = [
+//     "site-header",
+//     "pad-h",
+//     scrolled ? "scrolled" : "",
+//     hidden ? "header-hidden" : "",
+//   ]
+//     .filter(Boolean)
+//     .join(" ");
+
+//   return (
+//     <>
+//       <header className={headerClass}>
+//         <nav className="nav-list left desktop-only">
+//           {navLinks.left.map((item) => (
+//             <div
+//               className="nav-item"
+//               key={item.label}
+//               onMouseEnter={() => item.children && openSubmenu(item.label)}
+//               onMouseLeave={() => item.children && scheduleCloseSubmenu()}
+//             >
+//               <Link href={item.href}>{item.label}</Link>
+//               {item.children && (
+//                 <ul
+//                   className={`sub-menu ${
+//                     activeSubmenu === item.label ? "visible" : ""
+//                   }`}
+//                 >
+//                   {item.children.map((child) => (
+//                     <li key={child.label}>
+//                       <Link href={child.href}>{child.label}</Link>
+//                     </li>
+//                   ))}
+//                 </ul>
+//               )}
+//             </div>
+//           ))}
+//         </nav>
+
+//         <Link className="site-branding" href="/">
+//           <LogoImage />
+//         </Link>
+
+//         <nav className="nav-list right desktop-only">
+//           {navLinks.right.map((item) => (
+//             <Link key={item.label} href={item.href}>
+//               {item.label}
+//             </Link>
+//           ))}
+//         </nav>
+
+//         <button
+//           className="hamburger"
+//           aria-label="Open menu"
+//           onClick={() => setMenuOpen(true)}
+//         >
+//           <span />
+//           <span />
+//         </button>
+//       </header>
+
+//       <div className={`menu-overlay ${menuOpen ? "visible" : ""}`}>
+//         <div className="inner-wrap">
+//           <div className="top">
+//             <Link className="site-branding" href="/" onClick={() => setMenuOpen(false)}>
+//               <LogoImage />
+//             </Link>
+//             <button
+//               className="menu-close"
+//               aria-label="Close menu"
+//               onClick={() => setMenuOpen(false)}
+//             >
+//               ✕
+//             </button>
+//           </div>
+
+//           <div className="middle">
+//             <ul>
+//               {[...navLinks.left, ...navLinks.right].map((item) => (
+//                 <li key={item.label}>
+//                   <Link href={item.href} onClick={() => setMenuOpen(false)}>
+//                     {item.label}
+//                   </Link>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           <div className="bottom">
+//             <div>© Eternal 2026. All Rights Reserved</div>
+//             <Link href="/legal" onClick={() => setMenuOpen(false)}>
+//               Legal
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -374,20 +540,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { navLinks } from "@/data/content";
 
-function LogoImage({ className = "" }) {
+function LogoImage({ theme = "white", className = "" }) {
+  const src = theme === "black" ? "/images/Logo_black.png" : "/images/Logo_white.png";
+
   return (
-    <Image
-      src="/images/Logo_white.png"
+    <img
+      src={src}
       alt="Eternal"
-      width={120}
-      height={80}
       className={className}
-      priority
     />
   );
 }
 
-export default function Header() {
+export default function Header({ theme = "white" }) {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -419,8 +584,6 @@ export default function Header() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
 
-  // Submenu ko turant band nahi karte - thoda delay dete hain taaki
-  // mouse ka link se submenu tak ka gap cross karna aasan rahe.
   const openSubmenu = (label) => {
     clearTimeout(closeTimer.current);
     setActiveSubmenu(label);
@@ -437,6 +600,7 @@ export default function Header() {
   const headerClass = [
     "site-header",
     "pad-h",
+    theme === "black" ? "theme-black" : "theme-white",
     scrolled ? "scrolled" : "",
     hidden ? "header-hidden" : "",
   ]
@@ -473,7 +637,7 @@ export default function Header() {
         </nav>
 
         <Link className="site-branding" href="/">
-          <LogoImage />
+          <LogoImage theme={theme} />
         </Link>
 
         <nav className="nav-list right desktop-only">
@@ -498,7 +662,7 @@ export default function Header() {
         <div className="inner-wrap">
           <div className="top">
             <Link className="site-branding" href="/" onClick={() => setMenuOpen(false)}>
-              <LogoImage />
+              <LogoImage theme={theme} />
             </Link>
             <button
               className="menu-close"

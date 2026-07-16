@@ -290,7 +290,7 @@ export default function ContactPage() {
           z-index: 1;
           width: 100%;
           max-width: 1240px;
-          margin: 0 auto;
+          margin: 50px auto;
           padding: 56px 64px;
           border: 1px solid #ffffff;
           border-radius: 20px;          

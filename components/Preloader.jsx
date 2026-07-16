@@ -143,7 +143,10 @@ export default function Preloader({ onComplete }) {
       }`}
       aria-hidden="true"
     >
-      <img src="/images/Logo_white.png" alt="logo" />
+      <img src="/images/Logo_white.png"  alt="Eternal"
+      // width={120}
+      // height={80} 
+      />
     </div>
   );
 }
