@@ -101,6 +101,54 @@ export const divisions = [
   },
 ];
 
+export const services = [
+  {
+  name : "Extensions",
+  slug : "extensions",
+  },
+  {
+    name : "Loft Conversions",
+    slug : "loft-conversions",
+  },
+  {
+    name : "Renovations",
+    slug : "renovations",
+  },
+  {
+    name : "Bathrooms", 
+    slug : "bathrooms",
+  },
+  {
+    name : "Kitchens",
+    slug : "kitchens",
+  },
+  {
+    name : "Painting and Decorating",
+    slug : "painting-and-decorating",
+  },
+  {
+    name : "Roofing",
+    slug : "roofing",
+  },
+  {
+    name : "Flooring and Tiling",
+    slug : "flooring-and-tiling",
+  },
+  {
+    name : "Heating and Plumbing",
+    slug : "heating-and-plumbing",
+  },
+  {
+    name : "Electrics",
+    slug : "electrics",
+  },
+  {
+    name : "Landscaping",
+    slug : "landscaping",
+  },
+
+]
+
 export const featuredProjects = [
   {
     title: "Warwick Avenue W9",
@@ -241,9 +289,9 @@ export const navLinks = {
   left: [
     { label: "Projects", href: "/projects" },
     {
-      label: "Divisions",
+      label: "Services",
       href: "/divisions",
-      children: divisions.map((d) => ({
+      children: services.map((d) => ({
         label: d.name,
         href: `/divisions/${d.slug}`,
       })),
@@ -252,7 +300,7 @@ export const navLinks = {
   ],
   right: [
     { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
+    { label: "Reviews", href: "/reviews" },
     { label: "Contact", href: "/contact" },
   ],
 };
