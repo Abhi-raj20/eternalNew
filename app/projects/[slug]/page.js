@@ -5,6 +5,7 @@ import ProjectHero from "@/components/ProjectHero";
 import ProjectGallerySlider from "@/components/ProjectGallerySlider";
 import RelatedProjects from "@/components/RelatedProjects";
 
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
