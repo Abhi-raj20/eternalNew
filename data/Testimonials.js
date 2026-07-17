@@ -9,7 +9,7 @@ export const testimonials = [
     projectHref: "/projects/barnes",
   },
   {
-    name: "Neil Dixon",
+    name: "Neil Dixon", 
     role: "Client",
     quote:
       "We hired Paul and team to carry out a back-to-brickwork renovation of our Victorian house in Barnes. They were consummate professionals throughout — both super responsive and receptive to our requests. The craftsmanship and finish were first class. We would highly recommend them.",
